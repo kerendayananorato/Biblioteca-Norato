@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout com Tabela</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        table {
+            width: 100%;
+            height: 100vh;
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: top;
+            padding: 10px;
+        }
+        .banner, .rodape {
+            background-color: #fac9d1;
+        }
+        .menu {
+            background-color: #e6b3c2;
+            width: 20%;
+        }
+        .conteudo {
+            background-color: white;
+            width: 60%;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <!-- Banner -->
+        <tr>
+            <td colspan="3" class="banner" height="100px">
+                <h2>Biblioteca Norato</h2>
+            </td>
+        </tr>
+        
+        <!-- Menu + Conteúdo -->
+        <tr>
+            <!-- Menu lateral esquerdo -->
+            <td class="menu">
+                <h3>Opções de Livros</h3>
+                <a href="#" onclick="carregarConteudo('coraline.png','Coraline, de Neil Gaiman, é um livro de fantasia e terror que conta a história de Coraline, uma menina que descobre uma porta para um mundo paralelo. Lá, tudo parece melhor, mas a Outra Mãe esconde intenções perigosas. Coraline precisa ser corajosa para salvar seus pais e escapar desse mundo sombrio.')">Livro Coraline</a><br>
+                <a href="#" onclick="carregarConteudo('a hipótese do amor.png', 'A Hipótese do Amor, de Ali Hazelwood, é um romance contemporâneo que segue Olive, uma cientista que finge estar apaixonada por Adam, um professor arrogante, para ajudar uma amiga. No entanto, à medida que passam mais tempo juntos, eles começam a descobrir sentimentos reais e inesperados. O livro mistura romance, ciência e humor, explorando como o amor pode surgir de situações improváveis.')">Livro A Hipótese do Amor</a><br>
+                <a href="#" onclick="carregarConteudo('a coisa.png','A Coisa, de Stephen King, é um clássico do terror que segue um grupo de crianças na cidade de Derry, que enfrentam uma entidade maligna chamada Pennywise, um palhaço assustador que se alimenta dos medos das pessoas. O livro explora temas de amizade, coragem e os horrores que se escondem nas profundezas do subconsciente.')">Livro It - A coisa</a><br>
+
+            </td>
+            
+            <!-- Conteúdo -->
+            <td class="conteudo" id="conteudo">
+            <h3>Apresentação da Biblioteca Norato</h3>
+            <img src="Logo da Biblioteca Norato.png" alt="Logo da Biblioteca Norato" style="width: 500px; padding: 50px;">
+           <p>Na Biblioteca Norato, você encontra uma variedade incrível de livros para todos os gostos. Dos romances mais leves e apaixonantes aos terrores mais sombrios e arrepiantes, há sempre uma nova aventura à sua espera. Embarque em diferentes mundos e viva grandes histórias com a gente!</p>
+             </td>
+            <!-- Menu lateral direito -->
+            <td class="menu">
+                <h3>Opções de</h3>
+                <a href="#" onclick="carregarConteudo('As crônicas de Nárnia .png','Entre em um mundo mágico repleto de aventuras, criaturas fantásticas e batalhas épicas entre o bem e o mal. Em As Crônicas de Nárnia, C.S. Lewis nos convida a atravessar o guarda-roupa e descobrir um universo onde animais falam, reis são coroados e cada escolha pode mudar o destino de todos. Uma leitura encantadora e cheia de lições sobre coragem, amizade e esperança — ideal para leitores de todas as idades.')">Livro As crônicas de Nárnia </a><br>
+                <a href="#" onclick="carregarConteudo('Amor por engano.png','O que começa como uma mentira inocente acaba despertando sentimentos verdadeiros. Em Amor por Engano, dois desconhecidos se envolvem em uma farsa que aos poucos se transforma em algo real — e incontrolável. Com doses de humor, romance e reviravoltas, esta história vai conquistar seu coração e te fazer torcer por um final feliz desde a primeira página.')">Promessas Amor por Engano</a><br>
+                <a href="#" onclick="carregarConteudo('Promessas vazias.png','Nem toda promessa foi feita para ser cumprida. Em Promessas Vazias, acompanhamos uma história marcada por amores não correspondidos, mentiras silenciosas e feridas que o tempo insiste em deixar abertas. Entre esperanças quebradas e verdades escondidas, os personagens aprendem que confiar pode ser tão perigoso quanto amar. Uma narrativa intensa, perfeita para quem gosta de romances com emoção e reviravoltas.')">Livro Promessas Vazias </a><br>
+            </td>
+        </tr>
+        
+        <!-- Rodapé -->
+        <tr>
+    <td colspan="3" class="rodape" height="80px" style="text-align: center; font-size: 14px; color: #333;">
+        <p><strong>Biblioteca Norato</strong> © 2025 — Todos os direitos reservados.</p>
+        <p>Contato: <a href="mailto:bibliotecanorato@email.com">bibliotecanorato@email.com</a> | Desenvolvido por Keren Dayana</p>
+    </td>
+</tr>
+
+    </table>
+
+    <script>
+        function carregarConteudo(imagem, descricao) {
+            document.getElementById("conteudo").innerHTML = `
+                <h3>CONTEÚDO</h3>
+                <img src="${imagem}" width="250"><br>
+                <p>${descricao}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
